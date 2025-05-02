@@ -3,10 +3,111 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Neptun</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="./assets/favicon-neptu-new.png" type="image/x-icon" />
         <link rel="stylesheet" href="src/output.css" />
     </head>
     <body>
+        <header>
+            <div class="header-top">
+                <div class="max-w-[1200px] mx-auto px-4">
+                    <div class="flex md:flex-row items-center justify-between py-6 space-x-20">
+
+                        <div class="min-w-[120px]">
+                            <img class="xs:w-[150px] md:w-[180px] lg:w-[200px]" src="./assets/logo.png" alt="Neptun_market">
+                        </div>
+
+                        <div class="flex items-center justify-between gap-6 md:gap-x-10 lg:gap-x-20">
+
+                            <form class="flex items-center border border-[#ff8230] rounded-full overflow-hidden">
+                                <div class="pl-2">
+                                    <i class="fa fa-search text-[#ff8230]"></i>
+                                </div>
+                                <input class="pl-2 w-full sm:min-w-[300px] lg:min-w-[375px] xl:min-w-[400px] h-10 outline-none" type="text" placeholder="Məhsulu axtarın" />
+                                <button type="submit" class="h-10 px-3 xs:text-[12px] sm:px-4 md:px-5 text-white pr-2 rounded-full bg-[#ff8230] text-sm md:text-base">Axtar</button>
+                            </form>
+
+                            <div class="flex items-center gap-3 md:gap-5">
+
+                                <button type="button" class="bg-[#ff8230] py-1.5 px-3 rounded cursor-pointer hidden md:block custom:hidden">
+                                    <i class="fa-solid fa-bars text-white text-[25px]"></i>
+                                </button>
+
+                                <div class="flex items-center gap-1 sm:gap-2 pt-1 hidden custom:block">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="13" viewBox="0 0 18 13">
+                                        <image id="flag" data-name="flag" width="18" height="13" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAANCAYAAACkTj4ZAAAAr0lEQVQokWNkqN76n4EKgIkahjAMSoMYtynZnMMQBUkwMzPKhPkIMDIxMj5du/393x8/8YYl41VhDawKxJsrGH5ev8XwYdk6Bg59LQYmdnaGb6fOY6iDAZxe47YyYfiwYgOYLZgQwSDeWMbAyMKMoQ4GWDBEoODrsTMMAhEBYBe9X7AC7KL/f/5iqIN7bZuKDu4wCg0SYGRkZHi6fuMHgmHE0O2OVwGxYLgmSAYGBgCo1DI/FBxbhAAAAABJRU5ErkJggg=="></image>
+                                    </svg>
+                                    <span class="text-xs sm:text-sm">AZE</span>
+                                </div>
+
+                                <div class="hidden custom:block">
+                                    <a href="./index.htm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="97" height="43" viewBox="0 0 97 43">
+                                            c<image id="_162" data-name="162" width="97" height="43" xlink:href="data:img/png;base64,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"></image>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <div class="header-btm bg-[#ff8300]">
+                <div class="max-w-[1200px] mx-auto px-4">
+                    <div class="flex justify-between items-center ">
+                        
+                        <div class="bg-white flex items-center gap-2 px-4 py-2 rounded-t-md w-[220px]">
+                            <i class="fa fa-bars text-[#ff8200] text-[15px]"></i>
+                            <span class="text-[#ff8200] font-bold text-[15px]">Kateqoriyalar</span>
+                        </div>
+                        
+                        <nav class="flex items-center space-x-9">
+                            <menu class="text-white text-[12px] font-bold flex gap-8">
+                                <li class="hover:text-[#eee] transition ease-in-out duration-200"><a href="#">Ana səhifə</a></li>
+                                <li class="hover:text-[#eee] transition ease-in-out duration-200"><a href="#">Haqqımızda <i class="text-[10px] fa-solid fa-chevron-down"></i></a></li>
+                                <li class="hover:text-[#eee] transition ease-in-out duration-200"><a href="#">Aksiyalar <i class="text-[10px] fa-solid fa-chevron-down"></i></a></li>
+                                <li class="hover:text-[#eee] transition ease-in-out duration-200"><a href="#">Supermarketlər <i class="text-[10px] fa-solid fa-chevron-down"></i></a></li>
+                                <li class="hover:text-[#eee] transition ease-in-out duration-200"><a href="#">Karyera <i class="text-[10px] fa-solid fa-chevron-down"></i></a></li>
+                                <li class="hover:text-[#eee] transition ease-in-out duration-200"><a href="#">Karyera <i class="text-[10px] fa-solid fa-chevron-down"></i></a></li>
+                            </menu>
+                            <div>
+                                <div class="bg-[#ff8200] text-white flex items-center justify-end gap-4 px-6 py-2 text-sm relative">                                    
+                                    <div class="flex items-center gap-1 border-r border-white pr-3">
+                                      <i class="fa fa-lock"></i>
+                                      <span>Giriş</span>
+                                    </div>
+                                  
+                                    
+                                    <div class="flex items-center gap-1 cursor-pointer">
+                                      <span>Hesabım</span>
+                                      <i class="fa fa-chevron-down text-xs"></i>
+                                    </div>
+                                  
+                                    
+                                    <div class="cursor-pointer">
+                                      <i class="fa fa-heart text-xl"></i>
+                                    </div>
+                                  
+                                    
+                                    <div class="cursor-pointer">
+                                      <i class="fa fa-rotate-right text-xl"></i>
+                                    </div>
+                                  
+                                    
+                                    <div class="relative cursor-pointer">
+                                      <i class="fa fa-shopping-cart text-xl"></i>
+                                      <span class="absolute -top-2 -right-2 bg-green-500 text-black text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                                    </div>
+                                  </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
         
     </body>
 </html>
