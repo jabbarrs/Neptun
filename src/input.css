@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanchenjunga:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --breakpoint-xs: 25rem;
+    --breakpoint-xs: 400px;
     --breakpoint-custom: 62.5rem;
+    --breakpoint-custom2: 1200px;
+    --font-noto: 'Noto', sans-serif;
 }
