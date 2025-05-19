@@ -10,25 +10,84 @@
     </head>
     <body>
         <header>
-          <div class="header-top bg-white">
+          <div class="header-top bg-white relative">
+
+            <!-- left-sidebar -->
+            <div id="lsbar" class="flex flex-col h-screen p-3 min-w-[250px] w-[25%] bg-white border-r-1 border-red-500 absolute z-50 ">
+              <div class="space-y-3">
+                <div onclick="handleLeftSideBar()" class="flex items-center justify-end">
+                  <button class="p-2 cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </div>
+                <div class="flex-1">
+                  <ul class="pt-2 pb-4 space-y-1 text-sm">
+                    <li class=" border-b-1 border-[#eee] hover:text-[#ff8300]">
+                      <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+
+                        <span>Ana səhifə</span>
+                      </a>
+                    </li>
+                    <li class="border-b-1 border-[#eee] hover:text-[#ff8300]">
+                      <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+
+                        <span>Haqqımızda</span>
+                      </a>
+                    </li>
+                    <li class="border-b-1 border-[#eee] hover:text-[#ff8300] transition duration-300">
+                      <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+
+                        <span>Aksiyalar</span>
+                      </a>
+                      <button></button>
+                    </li>
+                    <li class="border-b-1 border-[#eee] hover:text-[#ff8300] transition duration-300">
+                      <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+
+                        <span>Supermarketlər</span>
+                      </a>
+                    </li>
+                    <li class="border-b-1 border-[#ff8300] hover:text-[#ff8300] transition duration-300">
+                      <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+
+                        <span>Karyera</span>
+                      </a>
+                    </li>
+                    <li class="border-b-1 border-[#eee] hover:text-[#ff8300] transition duration-300">
+                      <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li class="border-b-1 border-[#eee] hover:text-[#ff8300] transition duration-300">
+                      <a rel="noopener noreferrer" href="#" class="flex items-center p-2 space-x-3 rounded-md">
+
+                        <span>Logout</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             <div class="max-w-[1200px] mx-auto px-4">
-              <div class="flex items-center justify-between py-4 space-y-4 xs:space-x-9 md:space-y-0 md:space-x-10">
+              <div class="flex items-center justify-between py-4 space-y-4 xsx:space-x-4 xs:space-x-9 md:space-y-0 md:space-x-10">
           
-                <div class="min-w-[120px]">
-                  <img class="w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px]" src="./assets/logo.png" alt="Neptun_market">
+                <div class="xsx:min-w-[100px] xs:min-w-[120px]">
+                  <img class="sm:w-[160px] md:w-[200px]" src="./assets/logo.png" alt="Neptun_market">
                 </div>
           
                 <div class="flex items-center gap-4 sm:gap-6 md:gap-x-10 lg:gap-x-20 md:w-full justify-between">
           
                   <form class="flex w-full sm:w-auto items-center border border-[#ff8230] rounded-full overflow-hidden">
-                    <div class="pl-2">
+                    <div class="xsx:pl-1 xs:pl-2">
                       <i class="fa fa-search text-[#ff8230]"></i>
                     </div>
-                    <input class="pl-2 w-full min-w-0 sm:min-w-[200px] md:min-w-[300px] lg:min-w-[375px] xl:min-w-[400px] h-10 outline-none" type="text" placeholder="Məhsulu axtarın" />
-                    <button type="submit" class="h-10 px-3 text-white rounded-full bg-[#ff8230] text-sm">Axtar</button>
+                    <input class="pl-2 w-full xsx:min-w-[100px] xs:min-w-[150px] sm:min-w-[200px] md:min-w-[350px] custom:min-w-[400px] xsx:h-8 xs:h-10 outline-none" type="text" placeholder="Məhsulu axtarın" />
+                    <button type="submit" class="xs:h-10 xsx:h-8 xsx:px-1.5 xs:px-3 text-white rounded-full bg-[#ff8230] text-sm">Axtar</button>
                   </form>
 
-                  <button type="button" class="bg-[#ff8230] py-1.5 px-3 rounded cursor-pointer hidden md:block custom:hidden">
+                  <button onclick="handleLeftSideBar()" type="button" class="bg-[#ff8230] py-1.5 px-3 rounded cursor-pointer hidden md:block custom:hidden">
                     <i class="fa-solid fa-bars text-white text-[25px]"></i>
                   </button>
           
@@ -57,8 +116,150 @@
             </div>
           </div>
           
+          <div class="header-btm bg-[#ff8300]">
+            <div class="max-w-[1200px] mx-auto px-2.5 relative">
+                <div class="flex items-center">
+                    
+                  <div class="bg-white hidden custom:flex items-center gap-2 px-4 py-2 rounded-t-md w-[230px] absolute z-30 border-t-6 border-[#ff8200]">
+                        <i class="fa fa-bars text-[#ff8200] text-[15px]"></i>
+                        <span class="text-[#ff8200] font-bold text-[15px]">Kateqoriyalar</span>
+                        <ul class="absolute top-10 text-[12px] font-bold font-noto">
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                                <img src="" alt="">
+                                <span>Meyvə, tərəvəz, quru meyvə</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <img src="" alt=""> 
+                              <span>Ət, toyuq, dəniz məhsulları</span>
+                              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>Qastronom</span>
+                              <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>Ərzaq məhsulları</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>Şirniyyat, çay, kafe, diabetik</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>İçkilər</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>Süd məhsulları</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>Uşaq məhsulları</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>Yuyucu, təmizləyici vasitələr</span>
+                            </li>
+                            <li class="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-[#eee]">
+                              <span>Kosmetik və gigiyenik</span>
+                            </li>                                 
+                          </ul>
+                  </div>
 
+                  <div class="block custom:hidden cursor-pointer xsx:min-w-[20px] xs:min-w-[32px]">
+                    <img src="./assets/sort.png" alt="bar_svg" />
+                  </div>
+
+                  <nav class="flex items-center ml-auto custom2:ml-[260px] lg:space-x-12">
+                      <menu class="text-white lg:text-[12px] font-bold hidden custom2:flex gap-8">
+                          <li class="hover:text-[#eee] transition ease-in-out duration-200"><a href="#">Ana səhifə</a></li>
+
+                          <li class="relative group hover:text-[#eee] transition ease-in-out duration-300">
+                            <a href="#">Haqqımızda <i class="text-[10px] fa-solid fa-chevron-down"></i></a>
+                            <!-- dropdown menu -->
+                              <div class="absolute -left-5 mt-2 w-[250px] font-noto font-light text-[11px] bg-white text-black shadow-lg hidden rounded-b-lg group-hover:block z-40">
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Siyasətimiz</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Yeniliklər</a>
+                              </div>
+                          </li>
+
+                          <li class="relative group hover:text-[#eee] transition ease-in-out duration-300">
+                            <a href="#">Aksiyalar <i class="text-[10px] fa-solid fa-chevron-down"></i></a>
+                            <!-- dropdown menu -->
+                            <div class="absolute -left-5 mt-2 w-[250px] font-noto font-light text-[11px] bg-white text-black shadow-lg hidden rounded-b-lg group-hover:block z-40">
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Kampaniyalar</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Neptun Bonus Kart</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Elektron Kataloq</a>
+                            </div>
+                          </li>
+
+                          <li class="relative group hover:text-[#eee] transition ease-in-out duration-300">
+                            <a href="#">Supermarketlər <i class="text-[10px] fa-solid fa-chevron-down"></i></a>
+                            <!-- dropdown menu -->
+                            <div class="absolute -left-5 mt-2 w-[250px] font-noto font-light text-[11px] bg-white text-black shadow-lg hidden rounded-b-lg group-hover:block z-40">
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Mağazalarımız</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">İrad və Təkliflər</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Alıcıların Nəzərinə</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Partnyorluq</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Tərəfdaşlar</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Supermarketdə Reklam</a>
+                            </div>
+                          </li>
+
+                          <li class="relative group hover:text-[#eee] transition ease-in-out duration-300">
+                            <a href="#">Karyera <i class="text-[10px] fa-solid fa-chevron-down"></i></a>
+                            <!-- dropdown menu -->
+                            <div class="absolute -left-5 mt-2 w-[250px] font-noto font-light text-[11px] bg-white text-black shadow-lg hidden rounded-b-lg group-hover:block z-40">
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">İşə Qəbul Proseduru</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">Vakansiyalar</a>
+                              <a href="#" class="block px-3 py-2 hover:bg-gray-100">CV yerləşdirin</a>
+                            </div>
+                          </li>
+
+                          <li class="relative group hover:text-[#eee] transition ease-in-out duration-300">
+                            <a href="#">Əlaqə</a>
+                          </li>
+
+                      </menu>
+                      <div class="lg:text-[12px]">
+                          <div class="bg-[#ff8200] text-white flex items-center justify-end xsx:gap-2 xs:gap-4 xsx:px-3 xs:px-6 xsx:py-0.5 xs:py-2 xsx:text-[12px] xs:text-sm">                                    
+                              <div class="flex items-center gap-1 border-r border-white pr-3">
+                                <i class="fa fa-lock"></i>
+                                <span>Giriş</span>
+                              </div>
+                            
+                              
+                              <div class="flex items-center gap-1 cursor-pointer">
+                                <span>Hesabım</span>
+                                <i class="fa fa-chevron-down xsx:text-[12px] xs:text-sm"></i>
+                              </div>
+                            
+                              
+                              <div class="cursor-pointer">
+                                <i class="fa fa-heart xsx:text-[12px] xs:text-xl"></i>
+                              </div>
+                            
+                              
+                              <div class="cursor-pointer">
+                                <i class="fa fa-rotate-right xsx:text-[12px] xs:text-xl"></i>
+                              </div>
+                            
+                              
+                              <div class="relative cursor-pointer">
+                                <i class="fa fa-shopping-cart xsx:text-[12px] xs:text-xl"></i>
+                                <span class="absolute -top-2 -right-2 bg-green-500 text-black xsx:text-[12px] xs:text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                              </div>
+                            </div>
+                      </div>
+                  </nav>
+
+                  <div class="flex items-center xsx:ml-[10px]">
+                    <button type="button" class="bg-white xsx:py-[1px] xs:py-1 xsx:px-2 rounded cursor-pointer block md:hidden custom:hidden">
+                      <i class="fa-solid fa-bars text-[#ff8230] xsx:text-[15px] xs:text-[25px]"></i>
+                    </button>
+                  </div>                  
+                </div>
+            </div>
+          </div>
 
         </header>
+
+        <script src="./js/header.js"></script>
     </body>
 </html>
